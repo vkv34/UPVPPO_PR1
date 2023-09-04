@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/bootstrap.js"></script>
+</head>
+<body class="container-md">
+<div class="container-md d-flex justify-content-center">
+    <form action="/calculator/results" method="post">
+        <div class="mb-3 row">
+            <label class="col-form-label-lg" for="numberInput">Значение для подсчета:</label>
+            <input class="form-control" type="text" name="expression" id="numberInput">
+        </div>
+
+        <input class="btn btn-primary col-md-3" type="submit" value="Посчитать">
+    </form>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Converter</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script src="js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container-md d-flex justify-content-center">
+    <form action="/converter/result" method="post">
+        <div class="row align-items-center g-2">
+            <div class="col-auto">
+                <label class="col-form-label" for="fromCurrency">Из</label>
+            </div>
+            <div class="col-auto">
+                <select class="form-select" name="fromCurrency" id="fromCurrency" required>
+                    <!--/*@thymesVar id="currency" type="com.example.demo.model.Currency"*/-->
+                    <!--/*@thymesVar id="currencies" type="kotlin.collections.List<com.example.demo.model.Currency>"*/-->
+                    <option th:each="currency: ${currencies}" th:text="${currency.currencyName}"></option>
+                </select>
+            </div>
+            <div class="col-auto">
+                <label class="col-form-label " for="toCurrency">В</label>
+            </div>
+            <div class="col-auto">
+                <select class="form-select" name="toCurrency" id="toCurrency" required>
+                    <!--/*@thymesVar id="currency" type="com.example.demo.model.Currency"*/-->
+                    <!--/*@thymesVar id="currencies" type="kotlin.collections.List<com.example.demo.model.Currency>"*/-->
+                    <option th:each="currency: ${currencies}" th:text="${currency.currencyName}"></option>
+                </select>
+            </div>
+
+            <div class="col-auto">
+                <label class="col-form-label " for="value">Значение</label>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" name="value" id="value" required>
+            </div>
+            <div class="col-auto">
+                <input class="btn btn-primary" type="submit" value="конвертировать">
+            </div>
+
+
+
+
+        </div>
+    </form>
+</div>
+</body>
+</html>
